@@ -1,0 +1,32 @@
+server:
+  port: 5000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/intelligent_planting_platform?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: 215678@liting.
+#  servlet:
+#    multipart:
+#      max-file-size: 20MB
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.lee.qasystemmedicalserver.model.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+#aliyun:
+#  oss:
+#    file:
+#      endpoint: oss-cn-beijing.aliyuncs.com
+#      keyid: LTAI5t6TXdzfo3eCmGmEocwA
+#      keysecret: 45p9paHxRbfMvITDBHiuvjvvB4stjO
+#      bucketname: recommend-beautiful-china-bucket
